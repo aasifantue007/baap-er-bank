@@ -12,16 +12,27 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const previousWithrawTotalString = withdrawTotalElement.innerText;
     const previousWithdrawTotal = parseFloat(previousWithrawTotalString);
 
-// Step - 4 //
 
-const currentWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
-withdrawTotalElement.innerText = currentWithdrawTotal;
 
 // Step - 5 //
 
 const balanceTotalElement = document.getElementById('balance-total');
 const previousBalanceTotalString = balanceTotalElement.innerText;
 const previousBalanceTotal = parseFloat(previousBalanceTotalString);
+
+// step - 7 //
+
+withdrawField.value = ' '; 
+
+if(newWithdrawAmount > previousBalanceTotal){
+    alert('Balance Invalid')
+    return;
+}
+
+// Step - 4 //
+
+const currentWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
+withdrawTotalElement.innerText = currentWithdrawTotal;
 
 
 
@@ -32,9 +43,7 @@ balanceTotalElement.innerText = newBalanceTotal;
 
 
 
-// step - 7 //
 
-withdrawField.value = ' '; 
 
     
     
